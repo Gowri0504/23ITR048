@@ -12,7 +12,7 @@ interface Notification {
   timestamp: string;
 }
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'http://localhost:5001/api';
 
 function App() {
   const [notifications, setNotifications] = useState<Notification[]>([]);
