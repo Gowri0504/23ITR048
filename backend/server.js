@@ -11,13 +11,11 @@ const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.json());
 
-// Mock database
 let notifications = [
     { id: 1, type: 'Email', message: 'Welcome to our platform!', status: 'Sent', timestamp: new Date() },
     { id: 2, type: 'SMS', message: 'Your OTP is 123456', status: 'Pending', timestamp: new Date() }
 ];
 
-// Routes
 app.get('/api/notifications', async (req, res) => {
     await Log('backend', 'info', 'controller', 'Fetching all notifications');
     res.json(notifications);

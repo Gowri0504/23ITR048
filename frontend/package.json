@@ -1,5 +1,5 @@
 {
-  "name": "notification_app_fe",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
