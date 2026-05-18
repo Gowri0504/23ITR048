@@ -78,3 +78,14 @@
 - [x] Logging Middleware: Successfully attempts to send logs to the test server (requires valid AUTH_TOKEN).
 - [x] Frontend UI: Responsive dashboard for sending notifications via Email, SMS, or Push.
 - [x] Design Doc: Completed architecture overview.
+
+## 4. Evaluation Feedback
+
+### Github Solution Repository Link
+`https://github.com/Gowri0504/23ITR048.git`
+
+### Describe your test process experience
+The test process was comprehensive and well-structured, providing a realistic challenge that combined architecture design with full-stack implementation. It effectively tested the ability to integrate third-party APIs and manage cross-origin communication in a production-like environment. The focus on logging throughout the application lifecycle was particularly valuable for demonstrating the importance of observability.
+
+### Were there any sections of the test document that you weren't able to understand?
+The requirements were generally clear and logically laid out. The only area that required careful interpretation was the direct consumption of the Logging API by the frontend, which initially encountered CORS restrictions due to the server's policy. However, this was successfully addressed by implementing a backend proxy, which is a standard production-grade approach to handle such scenarios.
