@@ -3,7 +3,7 @@
 ## 1. Steps Taken
 
 ### Phase 1: Environment Setup
-- Created the core project structure with folders: `logging_middleware`, `backend`, `frontend`.
+- Created the core project structure with folders: `logging_middleware`, `notification_app_be`, `notification_app_fe`.
 - Initialized Git repository and configured `.gitignore` to exclude `node_modules` and environment files.
 
 ### Phase 2: Logging Middleware Development
@@ -16,12 +16,12 @@
 - Included sections on Data Flow, Scalability, and Technology Stack.
 
 ### Phase 4: Backend Implementation
-- Developed an Express.js server in `backend`.
+- Developed an Express.js server in `notification_app_be`.
 - Implemented GET and POST endpoints for managing notifications.
 - Integrated the shared `logging_middleware` to track server start, API requests, and errors.
 
 ### Phase 5: Frontend Implementation
-- Created a React + TypeScript application in `frontend` using Create React App.
+- Created a React + TypeScript application in `notification_app_fe` using Create React App.
 - Built a dashboard to send and view notifications.
 - Used Vanilla CSS for styling as per requirements.
 - Integrated the `logging_middleware` (adapted for frontend/ESM) to track UI interactions.
@@ -44,7 +44,7 @@
 1. Open a terminal.
 2. Navigate to the backend directory:
    ```bash
-   cd backend
+   cd notification_app_be
    ```
 3. Install dependencies:
    ```bash
@@ -60,7 +60,7 @@
 1. Open a new terminal.
 2. Navigate to the frontend directory:
    ```bash
-   cd frontend
+   cd notification_app_fe
    ```
 3. Install dependencies:
    ```bash
