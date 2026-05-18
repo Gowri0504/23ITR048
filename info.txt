@@ -30,6 +30,7 @@
 - Downgraded dependencies (Express, Axios, React, Testing Library) to versions compatible with Node v16.13.0 to resolve "Unsupported engine" warnings.
 - **Implemented CORS Workaround**: Since the Test Server's Logging API blocks direct browser calls due to CORS policy, I implemented a proxy endpoint (`/api/logs`) in the backend.
 - The frontend now sends logs to the backend proxy, which then forwards them to the Test Server. This ensures logs are reliably sent without browser interference.
+- **CRITICAL**: If you encounter `404 Cannot POST /api/logs`, ensure that **ALL** previous node processes are terminated and restart both the backend and frontend servers to apply the new routes.
 - Verified all features by running the backend server and building the frontend.
 - Cleaned up temporary files and verified compliance with submission guidelines (no mention of "Affordmed" or candidate name in code/docs).
 
