@@ -21,6 +21,17 @@ app.get('/api/notifications', async (req, res) => {
     res.json(notifications);
 });
 
+// Proxy endpoint for frontend logs to avoid CORS issues
+app.post('/api/logs', async (req, res) => {
+    const { stack, level, package: pkg, message } = req.body;
+    try {
+        const result = await Log(stack, level, pkg, message);
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to proxy log' });
+    }
+});
+
 app.post('/api/notifications', async (req, res) => {
     const { type, message } = req.body;
     

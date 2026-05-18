@@ -8,8 +8,8 @@ import axios from 'axios';
  * @param {string} message - The log message
  */
 export async function Log(stack: string, level: string, pkg: string, message: string) {
-    const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
-    const LOG_API_URL = 'http://4.224.186.213/evaluation-service/logs';
+    // Calling backend proxy instead of Test Server directly to avoid CORS issues
+    const LOG_API_URL = 'http://localhost:5001/api/logs';
 
     const validStacks = ['backend', 'frontend'];
     const validLevels = ['debug', 'info', 'warn', 'error', 'fatal'];
@@ -32,14 +32,13 @@ export async function Log(stack: string, level: string, pkg: string, message: st
             message: message
         }, {
             headers: {
-                'Authorization': `Bearer ${AUTH_TOKEN}`,
                 'Content-Type': 'application/json'
             }
         });
 
-        console.log('Log sent successfully:', response.data);
+        console.log('Log sent successfully via proxy:', response.data);
         return response.data;
     } catch (error: any) {
-        console.error('Error sending log:', error.response ? error.response.data : error.message);
+        console.error('Error sending log via proxy:', error.response ? error.response.data : error.message);
     }
 }
